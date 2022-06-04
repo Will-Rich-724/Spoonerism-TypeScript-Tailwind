@@ -25,12 +25,45 @@ const SpoonForm = () => {
         let newLast = ''
 
         if (fnflVowel === false && fnslVowel === true && lnflVowel === false && lnslVowel === true) {
-            console.log('Case 1')
-        newFirst = lastName[0].concat(firstName.slice(1))
-        newLast = firstName[0].concat(lastName.slice(1))
+            console.log('Case 1 consonate vowel consonate vowel')
+            newFirst = lastName[0].concat(firstName.slice(1))
+            newLast = firstName[0].concat(lastName.slice(1))
+        } else if (fnflVowel === false && fnslVowel === false && lnflVowel === false && lnslVowel === false) {
+            console.log('case 2 consonate consonate consonate consonate')
+            newFirst = lastName[0].concat(lastName[1].concat(firstName.slice(2)))
+            newLast = firstName[0].concat(firstName[1].concat(lastName.slice(2)))
+        } else if (fnflVowel === false && fnslVowel === false && lnflVowel === false && lnslVowel === true) {
+            console.log('case 3 consonate consonate consonate vowel')
+            newFirst = lastName[0].concat(firstName.slice(2))
+            newLast = firstName[0].concat(firstName[1].concat(lastName.slice(1)))
+        } else if (fnflVowel === false && fnslVowel === false && lnflVowel === true) {
+            console.log('case 4 consonate consonate vowel')
+            newFirst = firstName.slice(2)
+            newLast = firstName[0].concat(firstName[1].concat(lastName.slice(0)))
+        } else if (fnflVowel === false && fnslVowel === true && lnflVowel === false && lnslVowel === false) {
+            console.log('case 5 consonate vowel consonate consonate')
+            newFirst = lastName[0].concat(lastName[1].concat(firstName.slice(1)))
+            newLast = firstName[0].concat(lastName.slice(1))
+        }  else if (fnflVowel === false && fnslVowel === true && lnflVowel === true) {
+            console.log('case 6 consonate vowel vowel')
+            newFirst = firstName.slice(1)
+            newLast = firstName[0].concat(lastName.slice(0))
+        } else if (fnflVowel === true && lnflVowel === false && lnslVowel === false) {
+            console.log('case 7 vowel consonate consonate')
+            newFirst = lastName[0].concat(lastName[1].concat(firstName.slice(0)))
+            newLast = lastName.slice(2)
+        } else if (fnflVowel === true && lnflVowel === false && lnslVowel === true) {
+            console.log('case 8 vowel consonate vowel')
+            newFirst = lastName[0].concat(firstName.slice(0))
+            newLast = lastName.slice(1)
+        } else if (fnflVowel === true && lnflVowel === true) {
+            console.log('case 9 vowel vowel')
+            newFirst = lastName[0].concat(firstName.slice(1))
+            newLast = firstName[0].concat(lastName.slice(1))
         }
+        
 
-        setSpoonName(`${newFirst} ${newLast}`)
+        setSpoonName(`${newFirst.toLocaleUpperCase()} ${newLast.toLocaleUpperCase()}`)
     }
 
     return (
