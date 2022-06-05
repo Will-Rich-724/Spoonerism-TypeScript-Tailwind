@@ -68,18 +68,18 @@ const SpoonForm = () => {
 
     return (
         <>
-        <div>
-            <h2>Spoonerize Me</h2>
-            <form onSubmit={handleSubmit}>
-                <label className="block">First Name
-                <input type="text" id="first" onChange={handleChange}/>
+        <div className='f-full text-white flex-col text-center'>
+            <h1 className='text-xl block'>Spoonerize Me</h1>
+            <form className=''onSubmit={handleSubmit}>
+                <label className="py-2 block">First Name
+                <input className='block' type="text" id="first" onChange={handleChange}/>
                 </label>
-                <label className="block">Last Name
-                <input type="text" id="last" onChange={handleChange}/>
+                <label className="py-2 block">Last Name
+                <input className='block' type="text" id="last" onChange={handleChange}/>
                 </label>
-                <button type="submit">Spoonerize</button>
+                <button className='py-2 px-4 bg-green-600 rounded' type="submit">Spoonerize</button>
             </form>
-            <h2>{spoonName ? spoonName : null}</h2>
+            <h2 className='py-4 text-xl'>{spoonName ? spoonName : null}</h2>
         </div>
         </>
     )
