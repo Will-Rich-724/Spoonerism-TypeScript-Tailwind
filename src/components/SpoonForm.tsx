@@ -63,7 +63,7 @@ const SpoonForm = () => {
         }
         
 
-        setSpoonName(`${newFirst.toLocaleUpperCase()} ${newLast.toLocaleUpperCase()}`)
+        setSpoonName(`${newFirst.toUpperCase()} ${newLast.toUpperCase()}`)
     }
 
     return (
@@ -72,10 +72,10 @@ const SpoonForm = () => {
             <h1 className='text-xl block'>Spoonerize Me</h1>
             <form className=''onSubmit={handleSubmit}>
                 <label className="py-2 block">First Name
-                <input className='block' type="text" id="first" onChange={handleChange}/>
+                <input className='block text-black' type="text" id="first" onChange={handleChange}/>
                 </label>
                 <label className="py-2 block">Last Name
-                <input className='block' type="text" id="last" onChange={handleChange}/>
+                <input className='block text-black' type="text" id="last" onChange={handleChange}/>
                 </label>
                 <button className='py-2 px-4 bg-green-600 rounded' type="submit">Spoonerize</button>
             </form>

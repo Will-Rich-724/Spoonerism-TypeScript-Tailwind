@@ -5,7 +5,7 @@ import SpoonForm from './components/SpoonForm';
 
 function App() {
   return (
-    <div className='h-screen flex justify-center align-center bg-gradient-to-tr from-sky-500 to-indigo-500'>
+    <div className='h-screen grid place-items-center bg-gradient-to-tr from-sky-500 to-indigo-500'>
       <SpoonForm />
     </div>
   );
